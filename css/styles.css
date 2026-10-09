@@ -720,21 +720,45 @@ ol {
 }
 
 /* ==========================================================================
-   Linecard / Brand Logos Grid
+   Linecard / Brand Logos Grid (Left-Aligned, Full Color)
    ========================================================================== */
 .linecard-wrapper {
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: var(--space-3xl) var(--space-md);
-  text-align: center;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  text-align: left;
+  margin-top: var(--space-4xl);
+}
+
+.linecard-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  text-align: left;
+}
+
+.linecard-header .accent-tag {
+  margin-bottom: 0;
 }
 
 .linecard-heading {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
+  line-height: 1.2;
   color: var(--color-heading);
-  margin-bottom: var(--space-xl);
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.linecard-desc {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-body);
+  max-width: 932px;
+  text-align: left;
+  margin-top: var(--space-5xs);
 }
 
 .brand-logos-grid {
@@ -742,43 +766,43 @@ ol {
   grid-template-columns: repeat(7, 1fr);
   gap: var(--space-sm);
   align-items: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .brand-card {
   background: var(--color-white);
-  border: 1px solid var(--color-border-subtle);
+  border: none;
   border-radius: var(--radius-md);
   padding: var(--space-xs) var(--space-sm);
-  height: 68px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-normal);
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .brand-card:hover {
-  border-color: var(--color-primary-orange);
-  box-shadow: 0 4px 16px rgba(245, 127, 19, 0.12);
   transform: translateY(-2px);
+  box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.12);
 }
 
 .brand-logo-img {
-  max-width: 100%;
-  max-height: 38px;
+  max-width: 120px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  filter: grayscale(80%) opacity(0.85);
-  transition: all var(--transition-fast);
-}
-
-.brand-card:hover .brand-logo-img {
-  filter: grayscale(0%) opacity(1);
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 .linecard-more {
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-base);
   color: var(--color-primary-orange);
+  text-align: left;
   margin-top: var(--space-md);
 }
 
